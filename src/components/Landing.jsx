@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import bg1 from "./Images/bg (2).jpg";
 import { LiaImdb } from "react-icons/lia";
@@ -6,12 +6,40 @@ import { GiTomato } from "react-icons/gi";
 import { AiFillPlayCircle } from "react-icons/ai";
 
 const Landing = () => {
+  const [landingBb, setLandingBg] = useState(bg1);
+  // This commented section was to generate the main landing image and its details from the movie api and make it change after a particular ime but i stopped it because the resolution of the image doesnt fit the design. At least I know it works
+  // const apiUrl =
+  //   "https://api.themoviedb.org/3/movie/top_rated?api_key=dbeb68ad8241266d74b056cd39ebc519";
+  // useEffect(() => {
+  //   fetch(apiUrl)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       // const topTen = data.results.slice(0, 10);
+  //       const movies = data.results;
+  //       const randomMovie = movies[Math.floor(Math.random() * movies.length)];
+  //       console.log(randomMovie);
+  //       const apiImage = "https://image.tmdb.org/t/p/w500";
+  //       const { poster_path } = randomMovie;
+  //       const moviePoster = apiImage + poster_path;
+  //       setLandingBg(moviePoster);
+  //       // setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       // setLoading(true);
+  //       console.log(error);
+  //     });
+  // }, []);
+
   return (
     <div name="home" className="h-screen w-full relative ">
       <Header />
       <div>
         <div>
-          <img src={bg1} alt="" className="w-full h-screen object-cover z-0" />
+          <img
+            src={landingBb}
+            alt=""
+            className="w-full h-screen object-cover z-0"
+          />
         </div>
         <div className="absolute w-[404px] h-[285px] bg-none sm:left-[95px] top-[158px] left-[20px]">
           <p className="text-[48px] leading-[56px] text-white">

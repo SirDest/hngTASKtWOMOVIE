@@ -8,11 +8,12 @@ const Home = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const apiUrl =
-    "https://api.themoviedb.org/3/movie/top_rated?api_key=dbeb68ad8241266d74b056cd39ebc519";
+    "https://api.themoviedb.org/3/movie/top_rated?api_key=b7a4a649482ae6b85f96f25cfb20fdf5";
   useEffect(() => {
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         const topTen = data.results.slice(0, 10);
         setMovies(topTen);
         setLoading(false);

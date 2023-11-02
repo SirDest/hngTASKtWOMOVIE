@@ -9,7 +9,7 @@ const MovieDetailsPage = () => {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
-  const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=dbeb68ad8241266d74b056cd39ebc519&language=en-US&page=1`;
+  const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=b7a4a649482ae6b85f96f25cfb20fdf5&language=en-US&page=1`;
   const getMovie = async (Url) => {
     const res = await axios(Url);
     setMovies(res.data);
